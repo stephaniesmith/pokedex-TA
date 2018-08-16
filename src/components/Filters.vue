@@ -1,9 +1,7 @@
 <template>
-    <select>
-      <option>All types</option>
-      <option v-for="type in types"
-        :key="type"
-      >
+    <select v-model="filter.types">
+      <option value="all">All types</option>
+      <option v-for="type in types" :key="type">
         {{ type }}
       </option>
     </select>
@@ -11,8 +9,7 @@
 
 <script>
   export default {
-    
-    props: ['types']
+    props: ['types', 'filter']
   }
 </script>
 
