@@ -20,6 +20,7 @@
 
 <style scoped>
   #header {
-    background-color: cornflowerblue
+    background-color: cornflowerblue;
+    height: 100px;
   }
 </style>
