@@ -28,7 +28,7 @@
   }
 
   #pokemon-list {
-    margin: 0 5em;
+    margin: 0 3em;
     display: grid;
     grid-gap: 2em;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
