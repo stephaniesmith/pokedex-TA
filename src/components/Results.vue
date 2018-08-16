@@ -3,7 +3,7 @@
     <h1>Results</h1>
     <div id="pokemon-list">
       <Tile
-        v-for="pokemon in pokemonList"
+        v-for="pokemon in list"
         :key="pokemon.pokemon"
         :pokemon="pokemon"
       />
@@ -14,7 +14,7 @@
 <script>
   import Tile from './Tile.vue';
   export default {
-    props: ['pokemonList'],
+    props: ['list'],
     components: {
       Tile
     }
