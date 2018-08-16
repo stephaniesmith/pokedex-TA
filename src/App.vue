@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Header :types="types"/>
-    <Results :pokemonList="pokemon"/>
+    <Header :filter="filter" :types="types"/>
+    <Results :list="list"/>
   </div>
 </template>
 
@@ -17,9 +17,22 @@ export default {
     Results
   },
   data() {
-    return { pokemon };
+    return { 
+      pokemon,
+      filter: {
+        type: 'all'
+      }
+    }
   },
   computed: {
+    filtered() {
+      const { type } = this.filter;
+      return this.pokemon.filter(p => type === 'all' || p.type_1 === type || p.type_2 === type)
+    },
+    list() {
+      console.log(this.filtered);
+      return this.filtered;
+    },
     types() {
       const typeOne = this.pokemon.map(p => p.type_1);
       const typeTwo = this.pokemon.map(p => p.type_2);
