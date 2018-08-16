@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header :types="types"/>
     <Results :pokemonList="pokemon"/>
   </div>
 </template>
@@ -18,6 +18,14 @@ export default {
   },
   data() {
     return { pokemon };
+  },
+  computed: {
+    types() {
+      const typeOne = this.pokemon.map(p => p.type_1);
+      const typeTwo = this.pokemon.map(p => p.type_2);
+      const set = new Set(typeOne.concat(typeTwo));
+      return [...set.values()];
+    }
   }
 }
 </script>
