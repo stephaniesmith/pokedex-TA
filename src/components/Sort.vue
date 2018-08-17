@@ -1,5 +1,6 @@
 <template>
   <select v-model="sort.props">
+      <option value="id">Sort</option>
       <option value="pokemon">name</option>
       <option value="type_1">type</option>
       <option value="attack">attack</option>
