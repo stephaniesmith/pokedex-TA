@@ -1,5 +1,5 @@
 <template>
-    <select v-model="filter.types">
+    <select v-model="filter.type">
       <option value="all">All types</option>
       <option v-for="type in types" :key="type">
         {{ type }}

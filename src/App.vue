@@ -27,10 +27,10 @@ export default {
   computed: {
     filtered() {
       const { type } = this.filter;
-      return this.pokemon.filter(p => type === 'all' || p.type_1 === type || p.type_2 === type)
+      console.log(type);
+      return this.pokemon.filter(p => type === 'all' || p.type_1 === type || p.type_2 === type);
     },
     list() {
-      console.log(this.filtered);
       return this.filtered;
     },
     types() {
