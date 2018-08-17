@@ -14,5 +14,8 @@
 </script>
 
 <style scoped>
-
+  select {
+    background-color: white;
+    border: none;
+  }
 </style>
