@@ -17,26 +17,30 @@ export default {
     Results
   },
   data() {
-    return { 
+    return {
       pokemon,
       sort: {
-        props: 'pokemon'
+        props: 'id'
       },
       filter: {
         type: 'all'
       }
-    }
+    };
   },
   computed: {
     filtered() {
       const { type } = this.filter;
-      console.log('TYPE!', type);
       return this.pokemon.filter(p => type === 'all' || p.type_1 === type || p.type_2 === type);
     },
     list() {
       const { props } = this.sort;
-      console.log('SORT!', props);
-      return this.filtered;
+      return this.filtered.sort((a, b) => {
+        const propA = a[props];
+        const propB = b[props];
+        if(propA > propB) return 1;
+        if(propA < propB) return -1;
+        return 0;
+      });
     },
     types() {
       const typeOne = this.pokemon.map(p => p.type_1);
@@ -45,7 +49,7 @@ export default {
       return [...set.values()];
     }
   }
-}
+};
 </script>
 
 <style>
