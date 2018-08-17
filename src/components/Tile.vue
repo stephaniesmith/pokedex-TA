@@ -10,9 +10,9 @@
 </template>
 
 <script>
-  export default {
-    props: ['pokemon']
-  }
+export default {
+  props: ['pokemon']
+};
 </script>
 
 <style>

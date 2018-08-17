@@ -9,9 +9,9 @@
 </template>
 
 <script>
-  export default {
-    props: ['sort']
-  }
+export default {
+  props: ['sort']
+};
 </script>
 
 <style scoped>
