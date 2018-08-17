@@ -30,11 +30,11 @@ export default {
   computed: {
     filtered() {
       const { type } = this.filter;
-      return this.pokemon.filter(p => type === 'all' || p.type_1 === type || p.type_2 === type);
+      return this.pokemon.slice().filter(p => type === 'all' || p.type_1 === type || p.type_2 === type);
     },
     list() {
       const { props } = this.sort;
-      return this.filtered.sort((a, b) => {
+      return this.filtered.slice().sort((a, b) => {
         const propA = a[props];
         const propB = b[props];
         if(propA > propB) return 1;
