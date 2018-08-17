@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header :filter="filter" :types="types"/>
+    <Header :sort="sort" :filter="filter" :types="types"/>
     <Results :list="list"/>
   </div>
 </template>
@@ -19,6 +19,9 @@ export default {
   data() {
     return { 
       pokemon,
+      sort: {
+        props: 'pokemon'
+      },
       filter: {
         type: 'all'
       }
@@ -27,10 +30,12 @@ export default {
   computed: {
     filtered() {
       const { type } = this.filter;
-      console.log(type);
+      console.log('TYPE!', type);
       return this.pokemon.filter(p => type === 'all' || p.type_1 === type || p.type_2 === type);
     },
     list() {
+      const { props } = this.sort;
+      console.log('SORT!', props);
       return this.filtered;
     },
     types() {

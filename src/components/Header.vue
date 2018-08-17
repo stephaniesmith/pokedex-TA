@@ -2,7 +2,7 @@
   <header id="header">
     <h1>Header</h1>
     <Filters :filter="filter" :types="types"/>
-    <Sort/>
+    <Sort :sort="sort"/>
   </header>
 </template>
 
@@ -15,7 +15,7 @@
       Filters,
       Sort
     },
-    props: ['types', 'filter']
+    props: ['types', 'filter', 'sort']
   }
 </script>
 
