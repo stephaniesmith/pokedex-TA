@@ -12,19 +12,18 @@
 </template>
 
 <script>
-  import Tile from './Tile.vue';
-  export default {
-    props: ['list'],
-    components: {
-      Tile
-    }
-    
+import Tile from './Tile.vue';
+export default {
+  props: ['list'],
+  components: {
+    Tile
   }
+
+};
 </script>
 
 <style scoped>
   #results {
-    background-color: cadetblue;
   }
 
   #pokemon-list {
