@@ -18,5 +18,7 @@ export default {
   select {
     background-color: white;
     border: none;
+    margin: .5em;
+    padding: .5em;
   }
 </style>
